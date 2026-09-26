@@ -251,10 +251,174 @@ textarea {
   padding: 32px 12px;
 }
 
+/* 标签页 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tab {
+  position: relative;
+  background: #fff;
+  color: #445069;
+  border: 1px solid #dfe7f1;
+  padding: 9px 16px;
+}
+
+.tab.active {
+  background: #176b87;
+  color: #fff;
+  border-color: #176b87;
+}
+
+.tab-badge {
+  display: inline-block;
+  margin-left: 6px;
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #c84b31;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* 双栏 / 回单页布局 */
+.tab-grid,
+.receipt-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.receipt-layout {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.receipt-side {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.return-box { margin-bottom: 12px; font-size: 13px; }
+.return-box textarea { min-height: 60px; }
+
+.span-2 { grid-column: span 2; }
+
+.details-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.officer-input {
+  width: 160px;
+}
+
+.banner {
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.banner-warn {
+  background: #fdece8;
+  border: 1px solid #f0b8ac;
+  color: #a83a22;
+}
+
+.form-tip {
+  margin: 10px 0 0;
+  color: #69758c;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.text-danger { color: #c84b31; font-style: normal; font-weight: 600; }
+
+.rule-checks {
+  display: grid;
+  gap: 8px;
+}
+
+.check-label {
+  display: flex;
+  grid-template-columns: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.check-label input { width: auto; }
+
+/* 差异标签 */
+.diff-box {
+  border: 1px dashed #e0b0a4;
+  border-radius: 8px;
+  background: #fdf6f4;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.diff-box p { margin: 4px 0; font-size: 13.5px; }
+
+.diff-open { color: #c84b31; font-weight: 600; }
+.diff-closed { color: #14724f; }
+
+.diff-tag {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-right: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.diff-短装 { background: #fde7d9; color: #b3541e; }
+.diff-超装 { background: #e4eefe; color: #2557a7; }
+.diff-封签异常 { background: #f7e8fd; color: #7b3aa0; }
+
+/* 状态配色 */
+.status-待发车 { background: #eef1f6; color: #536078; }
+.status-运输中 { background: #e4eefe; color: #2557a7; }
+.status-待回单 { background: #fdf0da; color: #9a6312; }
+.status-已到站 { background: #e8f4ef; color: #14724f; }
+.status-未结 { background: #fde7d9; color: #b3381a; }
+.status-合格 { background: #e8f4ef; color: #14724f; }
+.status-不合格,
+.status-退回 { background: #fdece8; color: #a83a22; }
+
+/* 台账表格 */
+.table-scroll { overflow-x: auto; }
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.ledger-table th,
+.ledger-table td {
+  border-bottom: 1px solid #e4ebf3;
+  padding: 9px 10px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.ledger-table th {
+  color: #69758c;
+  font-weight: 600;
+  background: #f7fafd;
+}
+
+.ledger-table td .actions { flex-wrap: nowrap; }
+.ledger-table button { padding: 6px 10px; font-size: 12.5px; }
+
 @media (max-width: 860px) {
-  .app { padding: 18px; }
-  .topbar, .workspace { grid-template-columns: 1fr; }
-  .stack { justify-content: flex-start; }
-  .metrics { grid-template-columns: 1fr; }
-  .details { grid-template-columns: 1fr; }
+  .tab-grid, .receipt-layout { grid-template-columns: 1fr; }
+  .details-3 { grid-template-columns: 1fr; }
+  .span-2 { grid-column: span 1; }
+  .officer-input { width: 100%; }
 }
